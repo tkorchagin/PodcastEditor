@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>🎙 Podcast Editor v0.1.14</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript" >
+           (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+           m[i].l=1*new Date();
+           for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+           k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+           (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+           ym(92052306, "init", {
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true,
+                webvisor:true
+           });
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/92052306" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+
+    </head>
+    <body>
+        <div
+          id="drop_zone"
+          style="display: none;"
+          ondrop="dropHandler(event);"
+          ondragover="dragOverHandler(event);">
+          <p>Drag Audio or JSON here.</p>
+        </div>
+
+        
+        <div class="json-input-header">
+            <!-- Add a text input and a button for inputting and processing a JSON string -->
+            <input type="text" id="json-input" placeholder="Paste JSON here">
+            <button id="process-json">Process JSON</button>
+            <input type="text" id="track-name" placeholder="Track Name">
+            <button id="save-xml">Save as FCPXML</button>
+            <input type="file" id="json-file" accept=".json" style="display:none">
+            <button id="select-json-button">Select JSON File</button>
+        </div>
+
+        <div class="audio-player">
+            <audio src="" id="audioPlayer" loop controls></audio>
+            <input type="file" id="audio-file" accept="audio/*" style="display:none"/>
+            <button id="select-audio-button">Select Audio File</button>
+        </div>
+
+        <div class="left-side">
+            <!-- This div will contain the words -->
+            <div id="words">
+                <!-- Loop through the words and times in the JSON data and create a div for each word -->
+            </div>
+        </div>
+
+        <div class="right-side">
+            <!-- This div will be updated with the times when a word is clicked -->
+            <div id="times-list"></div>
+        </div>
+
+        <script src="scripts.js"></script>
+    </body>
+</html>
