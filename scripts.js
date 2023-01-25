@@ -83,8 +83,8 @@ function updateLeftSide(data) {
         }
         var endTime = time.split("-")[1];
         words_div += '<div class="word" id="' + time + '">' + word + '</div>\n';
-        // if (true) {
-        if (word.endsWith(".") || word.endsWith("?") || word.endsWith("!")) {
+        if (true) {
+        // if (word.endsWith(".") || word.endsWith("?") || word.endsWith("!")) {
             words_div += '</div>\n';
 
             text_to_add += '<div class="time-switcher-container">\n'
